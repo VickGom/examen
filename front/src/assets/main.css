@@ -1,0 +1,39 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Estilos personalizados simples */
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+  border-radius: 6px;
+}
+
+.form-control {
+  border-radius: 6px;
+}
+
+/* Estilos para modales */
+.modal.show {
+  display: block;
+}
+
+/* Estilos para tablas */
+.table th {
+  background-color: #f8f9fa;
+  border-top: none;
+}
+
+/* Estilos para badges */
+.badge {
+  font-size: 0.75em;
+} 
