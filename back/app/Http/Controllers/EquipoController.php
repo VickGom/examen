@@ -8,9 +8,7 @@ use App\Models\Equipo;
 
 class EquipoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //Muestra los equipos por busqueda
     public function index(Request $request)
     {
         try {
@@ -38,17 +36,7 @@ class EquipoController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    //Guarda el equipo
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -101,9 +89,7 @@ class EquipoController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
+    //Muestra el equipo
     public function show($id)
     {
         try {
@@ -128,17 +114,7 @@ class EquipoController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
+    //Actualiza el equipo
     public function update(Request $request, $id)
     {
         $equipo = Equipo::find($id);
@@ -200,9 +176,7 @@ class EquipoController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    //Elimina el equipo logicamente
     public function destroy($id)
     {
         try {

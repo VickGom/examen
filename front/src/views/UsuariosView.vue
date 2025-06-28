@@ -3,7 +3,7 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
-        <a class="navbar-brand" href="#">Sistema de Gestión</a>
+        <a class="navbar-brand" href="#">Sistema de Gestion</a>
         <div class="navbar-nav ms-auto">
           <span class="navbar-text me-3">
             Bienvenido, {{ authStore.user?.name }}
@@ -18,7 +18,7 @@
       </div>
     </nav>
 
-    <!-- Navigation -->
+    <!-- navegacion -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
       <div class="container">
         <div class="navbar-nav">
@@ -44,7 +44,7 @@
       </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- contenido principal -->
     <div class="container mt-4">
       <div class="row mb-4">
         <div class="col-md-8">
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <!-- Users List -->
+      <!-- esta parte si por algun futuro se agrega los usuarios al rol usuario -->
       <div class="card">
         <div class="card-header">
           <h5 class="mb-0">Lista de Usuarios</h5>
@@ -112,7 +112,7 @@
             </div>
           </div>
           
-          <!-- Empty State -->
+          <!-- esta parte si por algun futuro se agrega los usuarios al rol usuario -->
           <div v-else class="text-center py-5">
             <i class="bi bi-people display-1 text-muted"></i>
             <h5 class="mt-3">No hay usuarios</h5>

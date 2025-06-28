@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
         // Usuario administrador
@@ -22,7 +20,7 @@ class UserSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        // Usuarios normales
+        // Usuario normales
         User::create([
             'name' => 'Usuario 1',
             'email' => 'user1@example.com',
@@ -30,11 +28,5 @@ class UserSeeder extends Seeder
             'role' => 'user'
         ]);
 
-        User::create([
-            'name' => 'Usuario 2',
-            'email' => 'user2@example.com',
-            'password' => Hash::make('password'),
-            'role' => 'user'
-        ]);
     }
 }

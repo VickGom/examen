@@ -9,7 +9,7 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-// Import custom styles
+// Import estilos personalizados
 import './assets/main.css'
 
 const app = createApp(App)

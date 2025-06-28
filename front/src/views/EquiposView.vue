@@ -18,7 +18,7 @@
       </div>
     </nav>
 
-    <!-- Navigation -->
+    <!-- navegacion -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
       <div class="container">
         <div class="navbar-nav">
@@ -45,7 +45,7 @@
       </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- contenido principal -->
     <div class="container mt-4">
       <div class="row mb-4">
         <div class="col-md-8">
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <!-- Search -->
+      <!-- buscador -->
       <div class="row mb-4">
         <div class="col-md-6">
           <div class="input-group">
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-      <!-- Equipment List -->
+      <!-- muestra los equipos -->
       <div class="card">
         <div class="card-header">
           <h5 class="mb-0">Lista de Equipos</h5>
@@ -126,7 +126,7 @@
             </div>
           </div>
           
-          <!-- Empty State -->
+          <!-- cuando no hay usuarios se muestra esta parte -->
           <div v-else class="text-center py-5">
             <i class="bi bi-box display-1 text-muted"></i>
             <h5 class="mt-3">No hay equipos</h5>

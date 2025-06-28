@@ -8,7 +8,7 @@ import TheWelcome from './components/TheWelcome.vue'
 </template>
 
 <style>
-/* Global styles */
+/* estilos globales, para darle mejor detalle */
 * {
   margin: 0;
   padding: 0;

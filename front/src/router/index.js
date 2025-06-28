@@ -39,18 +39,18 @@ const router = createRouter({
   ]
 })
 
-// Navigation guards
+//En esta logica se encarga de la autenticacion del usuario, con rutas privadas o publicas en base al back
 router.beforeEach(async (to, from, next) => {
   const authStore = useAuthStore()
   
-  // Check if user is authenticated
+
   if (to.meta.requiresAuth) {
     if (!authStore.isAuthenticated()) {
       next('/login')
       return
     }
     
-    // Check if user data is loaded
+
     if (!authStore.user) {
       const isAuthenticated = await authStore.checkAuth()
       if (!isAuthenticated) {
@@ -59,14 +59,14 @@ router.beforeEach(async (to, from, next) => {
       }
     }
     
-    // Check admin requirement
+
     if (to.meta.requiresAdmin && !authStore.isAdmin()) {
       next('/dashboard')
       return
     }
   }
   
-  // Redirect authenticated users away from login
+
   if (to.meta.requiresGuest && authStore.isAuthenticated()) {
     next('/dashboard')
     return

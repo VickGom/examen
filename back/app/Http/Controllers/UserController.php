@@ -9,9 +9,7 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //Muestra los usuarios
     public function index()
     {
         try {
@@ -28,17 +26,8 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //Guarda los usuarios
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -89,9 +78,7 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
+    //Muestra un usuario
     public function show($id)
     {
         try {
@@ -116,17 +103,7 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
+    //Actualiza el usuario
     public function update(Request $request, $id)
     {
         $user = User::find($id);
@@ -188,9 +165,7 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    //Elimina logicamente el usuario
     public function destroy($id)
     {
         try {

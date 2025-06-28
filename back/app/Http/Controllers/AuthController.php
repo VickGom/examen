@@ -10,6 +10,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    //Aqui esta la logica del inicio de sesion, regresa un token que se utiliza para hacer todas las peticiones
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -48,6 +49,7 @@ class AuthController extends Controller
         ], 401);
     }
 
+    //Se elimina la sesion
     public function logout(Request $request)
     {
         try {
@@ -65,58 +67,7 @@ class AuthController extends Controller
         }
     }
 
-    public function register(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|min:2',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'role' => 'sometimes|in:admin,user'
-        ], [
-            'name.required' => 'El nombre es obligatorio',
-            'name.min' => 'El nombre debe tener al menos 2 caracteres',
-            'name.max' => 'El nombre no puede tener más de 255 caracteres',
-            'email.required' => 'El email es obligatorio',
-            'email.email' => 'El email debe tener un formato valido',
-            'email.unique' => 'Este email ya esta registrado',
-            'email.max' => 'El email no puede tener más de 255 caracteres',
-            'password.required' => 'La contraseña es obligatoria',
-            'password.min' => 'La contraseña debe tener al menos 8 caracteres',
-            'password.confirmed' => 'Las contraseñas no coinciden',
-            'role.in' => 'El rol debe ser admin o user'
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Error de validación',
-                'errors' => $validator->errors()
-            ], 422);
-        }
-
-        try {
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'role' => $request->role ?? 'user'
-            ]);
-
-            $token = $user->createToken('auth-token')->plainTextToken;
-
-            return response()->json([
-                'success' => true,
-                'user' => $user,
-                'token' => $token
-            ], 201);
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Error al crear el usuario'
-            ], 500);
-        }
-    }
-
+    //obtener informaciondel usuario
     public function me(Request $request)
     {
         try {
