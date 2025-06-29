@@ -1,6 +1,6 @@
 Para levantar el proyecto*****
 Yo levante el proyecto en laragon, meti todo el proyecto en la carpeta de laragon/www/
-despues inicie laragon php 8.2
+despues inicie laragon php 8.2, base de datos solo se ocupa crear la base de datos con el nombre examen: CREATE DATABASE examen; , lo demas sera en base a migraciones en laravel.
 
 1.- git clone https://github.com/VickGom/examen.git
 cd examen (nombre del la carpeta donde se encuentra el proyecto)
